@@ -1,0 +1,114 @@
+.dashboard {
+  width: 80%;
+  height: 70%;
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+}
+
+.dataBox {
+  width: 50%;
+  border: 1px solid rgb(189, 187, 187);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 0.2rem;
+}
+table {
+  border: 1px solid gray;
+}
+
+.visualBox {
+  width: 50%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(200, 184, 184);
+  margin: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.companyTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  color: gray;
+}
+
+.companyTable th,
+.companyTable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.companyTable th {
+  background-color: #f2f2f2;
+}
+
+.companyTable tbody tr:hover {
+  background-color: #f5f5f5;
+}
+.dataBox p {
+  display: flex;
+  justify-content: space-between;
+  font-size: larger;
+  font-weight: 600;
+}
+.dataBox p span svg {
+  font-weight: 600;
+  color: gray;
+  font-size: 25px;
+}
+.sortBox {
+  padding: 2px;
+}
+.sortLabel {
+  font-size: 15px;
+  color: gray;
+  margin: 8px;
+}
+.options {
+  padding: 25px;
+  height: 30px;
+}
+.doughtnutBox {
+  /* height: 70%; */
+  width: 60%;
+  display: flex;
+ margin: auto;
+  
+}
+
+
+
+.boxOfNut {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 0.5rem;
+  border-bottom: 1px solid gray;
+  height: 40px;
+  width: 97%;
+  color: gray;
+}
+.boxOfNut span {
+  font-size: 25px;
+  color: gray;
+}
+.buttonBox{
+    width: 200px;
+    height: 80px;
+    margin-left: 390px;
+}
+.buttonBox button{
+    margin: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: none;
+}
+.buttonBox button svg{
+   font-size: 25px;
+  
+}
