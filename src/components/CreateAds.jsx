@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import styles from "../styles/createads.module.css";
 import adMedia from "../assets/meadiAd.png";
 import textMedia from "../assets/adText.png";
+import { useNavigate } from "react-router-dom";
 function CreateAds() {
+  const navigate = useNavigate()
   const [checkedText, setCheckedText] = useState(false);
   const [checkedMedia, setCheckedMedia] = useState(false);
+  
 
   const handleChangeText = () => {
     setCheckedText(!checkedText);
@@ -12,6 +15,17 @@ function CreateAds() {
   const handleChangeMedia = () => {
     setCheckedMedia(!checkedMedia);
   };
+
+  const openForms = () => {
+    if(checkedText){
+      navigate("/adds/textMedia")
+
+    }else if(checkedMedia){
+      navigate("/adds/adMedia")
+    }else{
+      alert("Please select a media")
+    }
+  }
   return (
     <div className={styles.adsSections}>
       <p>Create ads</p>
@@ -39,7 +53,7 @@ function CreateAds() {
           <button>Media Ad</button>
         </div>
       </div>
-      <button >Next</button>
+      <button onClick={openForms}>Next</button>
     </div>
   );
 }
