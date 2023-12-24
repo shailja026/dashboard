@@ -133,7 +133,7 @@
 
   .dataBox,
   .visualBox {
-    width: 100%;
+    width: 100vw;
   }
 
   .buttonBox {
@@ -141,7 +141,7 @@
   }
   .companyTable {
     font-size: small;
-    width: 80%;
+    width: 90%;
   }
   .companyTable th,
   .companyTable td {
