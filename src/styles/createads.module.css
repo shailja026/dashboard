@@ -1,0 +1,76 @@
+.adsSections{
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(233, 223, 223);
+    margin: 20px auto; 
+    /* padding: 1rem; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.adsSections > p{
+    color: rgb(169, 166, 166);
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: -70rem;
+    /* margin-top: -10rem; */
+}
+.adsSections > button{
+    width: 130px;
+    padding: 0.5rem;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  margin-right: -70rem;
+    background-color: rgb(48, 162, 249);
+    border: none;
+}
+.adBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto auto;
+   
+}
+.adversite{
+    display: flex;
+    flex-direction: column;
+    padding: 0.7rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    color: rgb(116, 107, 107);
+    margin: 10px;
+    height: 90%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 15px;
+    
+}
+.checkbox{
+    width: 20px;
+  height: 20px;
+  
+}
+.checkbox:checked {
+   background-color: rgb(117, 255, 248) !important; 
+  }
+.adversite img{
+    width: 80%;
+    object-fit: cover;
+    margin: auto;
+}
+.adversite p{
+    color: gray;
+    margin-bottom: -10px;
+}
+.adversite button{
+    padding: 10px;
+    border: none;
+    font-weight: 600;
+    font-size: 20px;
+    background: transparent;
+    color: rgb(74, 70, 70);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
