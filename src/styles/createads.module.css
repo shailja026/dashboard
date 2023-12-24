@@ -74,3 +74,13 @@
     color: rgb(74, 70, 70);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+@media  screen and (max-width:746px){
+    .adBox{
+        flex-direction: column;
+    }
+    .adsSections > button{
+        margin-right: 0;
+    }
+    
+}

@@ -5,12 +5,14 @@ import Dashboard from "./components/Dashboard";
 import CreateAds from "./components/CreateAds";
 import TextMediaForm from "./components/TextMediaForm";
 import AdMedia from "./components/AdMedia";
-
+import 'bootstrap/dist/css/bootstrap.min.css'
+import ColorSchemesExample from "./components/BootNav.jsx"
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Navbar />
+        {/* <ColorSchemesExample/> */}
         <Routes>
           <Route path="/" element={<Dashboard/>} />
           <Route path="/adds" element = {<CreateAds/>} />

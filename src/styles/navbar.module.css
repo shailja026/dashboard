@@ -30,3 +30,16 @@
     font-weight: 600;
     color: black;
 }
+
+@media screen and(max-width:746px) {
+    .NavContainer{
+        overflow-x: hidden;
+    }
+    .pages{
+        width: 25%;
+        padding: 0.5rem;
+    }
+    .navbar span{
+        font-size: 25px;
+    }
+}

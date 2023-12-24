@@ -22,6 +22,7 @@ function Dashboard() {
       },
     ],
   };
+  const matrixOptions = ['Male', 'Female', 'Unknown'];
   const options = {
     plugins: {
       legend: {
@@ -38,6 +39,8 @@ function Dashboard() {
   const [openDonought, setOpenDonought] = useState(true);
   const [people, setPeople] = useState([...peopleData]);
   const [sortPeople, setSortPeople] = useState("desc");
+
+  const [selectedMatrix, setSelectedMatrix] = useState('Clicks');
 
   //   Sorting of data with respect to Cost
   const handleSortChange = (e) => {
@@ -75,6 +78,10 @@ function Dashboard() {
   const handleBox2 = () => {
     setOpenDonought(false);
     setOpentable(true);
+  };
+
+  const handleChangeMatrix = (event) => {
+    setSelectedMatrix(event.target.value);
   };
 
   return (
@@ -121,9 +128,9 @@ function Dashboard() {
               <tr key={company.Id} className={styles.row}>
                 <td>{company.Compaigns}</td>
                 <td>{company.Clicks}</td>
-                <td>USD {company.Cost}</td>
+                <td>$ {company.Cost}</td>
                 <td>{company.Conversions}</td>
-                <td>USD {company.Revenue}</td>
+                <td>$ {company.Revenue}</td>
               </tr>
             ))}
           </tbody>
@@ -145,7 +152,16 @@ function Dashboard() {
               <option value="desc">Descending</option>
             </select>
           ) : (
-            ""
+            <div>
+            {/* <label>Select Matrix:</label> */}
+            <select value={selectedMatrix} onChange={handleChangeMatrix}>
+              {matrixOptions.map((matrix) => (
+                <option key={matrix} value={matrix}>
+                  {matrix}
+                </option>
+              ))}
+            </select>
+          </div>
           )}
           <span>
             {" "}
@@ -176,9 +192,9 @@ function Dashboard() {
                     <tr key={company.id} className={styles.row}>
                       <td>{company.group}</td>
                       <td>{company.clicks}</td>
-                      <td>USD {company.cost}</td>
+                      <td>$ {company.cost}</td>
                       <td>{company.conversions}</td>
-                      <td>USD {company.revenue}</td>
+                      <td>$ {company.revenue}</td>
                     </tr>
                   ))}
                 </tbody>

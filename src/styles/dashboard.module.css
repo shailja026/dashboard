@@ -38,15 +38,13 @@
 .companyTable th,
 .companyTable td {
   border: 1px solid #ddd;
- 
- 
+
   padding: 10px;
   text-align: left;
 }
 
 .companyTable th {
   background-color: #f2f2f2;
-
 }
 
 .companyTable tbody tr:hover {
@@ -79,11 +77,8 @@
   /* height: 70%; */
   width: 60%;
   display: flex;
- margin: auto;
-  
+  margin: auto;
 }
-
-
 
 .boxOfNut {
   display: flex;
@@ -100,20 +95,57 @@
   font-size: 25px;
   color: gray;
 }
-.buttonBox{
-    width: 200px;
-    height: 80px;
-    margin-left: 390px;
-    margin-top: -5rem;
+.buttonBox {
+  width: 200px;
+  height: 80px;
+  margin-left: 390px;
+  margin-top: -5rem;
 }
-.buttonBox button{
-    margin: 10px;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    border: none;
+.buttonBox button {
+  margin: 10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
 }
-.buttonBox button svg{
-   font-size: 25px;
-  
+.buttonBox button svg {
+  font-size: 25px;
+}
+@media screen and(max-width:530px) {
+  .companyTable {
+    
+    font-size: small;
+  }
+  .dataBox{
+    overflow-x: scroll;
+  }
+  .companyTable th,
+.companyTable td{
+  width: auto;
+}
+}
+/* Media query for screens smaller than 600px */
+@media screen and (max-width: 746px) {
+  .dashboard {
+    width: 70vw;
+    flex-direction: column;
+  }
+
+  .dataBox,
+  .visualBox {
+    width: 100%;
+  }
+
+  .buttonBox {
+    margin-left: 0;
+  }
+  .companyTable {
+    font-size: small;
+    width: 80%;
+  }
+  .companyTable th,
+  .companyTable td {
+    padding: 5px;
+    text-align: center;
+  }
 }
