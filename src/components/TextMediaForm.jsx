@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/textmedia.module.css";
 import { useNavigate } from "react-router-dom";
-import { FaCircleCheck } from "react-icons/fa6";
 import SubmitPage from "./SubmitPage";
 function TextMediaForm() {
   const navigate = useNavigate();

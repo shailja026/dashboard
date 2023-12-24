@@ -24,11 +24,11 @@ function Dashboard() {
   };
   const options = {
     plugins: {
-        legend: {
-          position: "right",
-          align: "middle",
-      }
-    }
+      legend: {
+        position: "right",
+        align: "middle",
+      },
+    },
   };
 
   // States
@@ -37,7 +37,7 @@ function Dashboard() {
   const [opetTable, setOpentable] = useState(false);
   const [openDonought, setOpenDonought] = useState(true);
   const [people, setPeople] = useState([...peopleData]);
-  const [sortPeople, setSortPeople] = useState("desc")
+  const [sortPeople, setSortPeople] = useState("desc");
 
   //   Sorting of data with respect to Cost
   const handleSortChange = (e) => {
@@ -50,7 +50,6 @@ function Dashboard() {
       }),
     [sortOrder]
   );
-
 
   const peoplesortedData = useMemo(
     () =>
@@ -65,18 +64,18 @@ function Dashboard() {
     setData(sortedData);
   }, [sortOrder]);
 
-  useEffect(()=>{
-    setPeople(peoplesortedData)
-  },[sortPeople])
+  useEffect(() => {
+    setPeople(peoplesortedData);
+  }, [sortPeople]);
 
-  const handleBox1 = () =>{
+  const handleBox1 = () => {
     setOpenDonought(true);
-    setOpentable(false)
+    setOpentable(false);
   };
-  const handleBox2 = () =>{
+  const handleBox2 = () => {
     setOpenDonought(false);
     setOpentable(true);
-  }
+  };
 
   return (
     <div className={styles.dashboard}>
@@ -122,9 +121,9 @@ function Dashboard() {
               <tr key={company.Id} className={styles.row}>
                 <td>{company.Compaigns}</td>
                 <td>{company.Clicks}</td>
-                <td>{company.Cost}</td>
+                <td>USD {company.Cost}</td>
                 <td>{company.Conversions}</td>
-                <td>{company.Revenue}</td>
+                <td>USD {company.Revenue}</td>
               </tr>
             ))}
           </tbody>
@@ -135,57 +134,80 @@ function Dashboard() {
       <div className={styles.visualBox}>
         <div className={styles.boxOfNut}>
           <p>Ad Insights</p>
-          {opetTable ? <select
-            id="sortOrder"
+          {opetTable ? (
+            <select
+              id="sortOrder"
               value={sortPeople}
               onChange={(e) => setSortPeople(e.target.value)}
               className={styles.sortBox}
-          >
-            <option value="asc" >
-              Ascending
-            </option>
-            <option value="desc">Descending</option>
-          </select> : ""}
+            >
+              <option value="asc">Ascending</option>
+              <option value="desc">Descending</option>
+            </select>
+          ) : (
+            ""
+          )}
           <span>
             {" "}
             <CiCircleQuestion />
           </span>{" "}
         </div>
-        {openDonought ? <div className={styles.doughtnutBox}>
-         
-         <Doughnut data={Pdata} options={options}></Doughnut>
-       </div> : <div>
-         { <table className={styles.companyTable}>
-          <thead>
-            <tr>
-              <th>
-              Group <RiArrowDropDownLine />
-              </th>
-              <th>Clicks</th>
-              <th>Cost</th>
-              <th>Conversions</th>
-              <th>Revenue</th>
-            </tr>
-          </thead>
-          <tbody>
-            {people.map((company) => (
-              <tr key={company.id} className={styles.row}>
-                <td>{company.group}</td>
-                <td>{company.clicks}</td>
-                <td>{company.cost}</td>
-                <td>{company.conversions}</td>
-                <td>{company.revenue}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>}
+        {openDonought ? (
+          <div className={styles.doughtnutBox}>
+            <Doughnut data={Pdata} options={options}></Doughnut>
+          </div>
+        ) : (
+          <div style={{ height: "350px" }}>
+            {
+              <table className={styles.companyTable}>
+                <thead>
+                  <tr>
+                    <th>
+                      Group <RiArrowDropDownLine />
+                    </th>
+                    <th>Clicks</th>
+                    <th>Cost</th>
+                    <th>Conversions</th>
+                    <th>Revenue</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {people.map((company) => (
+                    <tr key={company.id} className={styles.row}>
+                      <td>{company.group}</td>
+                      <td>{company.clicks}</td>
+                      <td>USD {company.cost}</td>
+                      <td>{company.conversions}</td>
+                      <td>USD {company.revenue}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            }
+          </div>
+        )}
 
-
-       </div> }
-        
         <div className={styles.buttonBox}>
-            <button onClick={handleBox1} style={openDonought ? {backgroundColor : "skyblue"} : {backgroundColor:"white"}}><BiSolidDoughnutChart/></button>
-            <button onClick={handleBox2} style={opetTable ? {backgroundColor : "skyblue"} : {backgroundColor:"white"}}><MdTableChart/></button>
+          <button
+            onClick={handleBox1}
+            style={
+              openDonought
+                ? { backgroundColor: "skyblue" }
+                : { backgroundColor: "wheat" }
+            }
+          >
+            <BiSolidDoughnutChart />
+          </button>
+          <button
+            onClick={handleBox2}
+            style={
+              opetTable
+                ? { backgroundColor: "skyblue" }
+                : { backgroundColor: "wheat" }
+            }
+          >
+            <MdTableChart />
+          </button>
         </div>
       </div>
     </div>
