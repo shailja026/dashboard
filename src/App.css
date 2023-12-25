@@ -2,7 +2,7 @@
 *{
   margin: 0;
   padding: 0;
-  
+  box-sizing: border-box;
 }
 .App {
   text-align: center;
@@ -10,5 +10,5 @@
 
 body{
   overflow-x: hidden;
-  
+  font-family: 'segoe ui';
 }

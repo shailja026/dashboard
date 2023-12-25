@@ -11,8 +11,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar />
-        {/* <ColorSchemesExample/> */}
+        {/* <Navbar /> */}
+        <ColorSchemesExample/>
         <Routes>
           <Route path="/" element={<Dashboard/>} />
           <Route path="/adds" element = {<CreateAds/>} />
